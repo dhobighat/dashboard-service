@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active:
+    - development
+
+
+---
+spring:
+    profiles: development
+server:
+  port: 8910
+
+okta:
+  oauth2:
+    issuer: https://dev-360345.okta.com/oauth2/default
+    client-id: 0oas09h60r6havK7r4x6
+    client-secret: 80EvPj2U2lxUOLqTeuTwsB4VdAJuDr1D3usFRByz
+    redirect-uri: /authorization-code/callback
+---
+
+spring:
+  profiles: production
+server:
+  port: 8910
+
+okta:
+  oauth2:
+    issuer: https://dev-360345.okta.com/oauth2/default
+    client-id: 0oas09h60r6havK7r4x6
+    client-secret: 80EvPj2U2lxUOLqTeuTwsB4VdAJuDr1D3usFRByz
+    redirect-uri: /authorization-code/callback
+
+
