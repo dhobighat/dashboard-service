@@ -4,12 +4,8 @@ pipeline {
         stage('maven-build') {
             steps {
                 sh 'mvn clean install'
-            }
-        }
-        stage('docker-build') {
-            steps {
                 sh 'docker build -t dashboard-service:1.1 .'
-           }
+            }
         }
     }
 }
