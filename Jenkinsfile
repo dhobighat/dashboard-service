@@ -1,10 +1,33 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
+    agent any
     stages {
-        stage('maven-build') {
+        stage ('Checking java version') {
             steps {
-                sh 'mvn clean install'
-                sh 'docker build -t dashboard-service:1.1 .'
+                    sh 'java -version'
+            }
+        }
+        stage ('maven version') {
+            steps {
+                    sh 'mvn -version'
+            }
+        }
+        stage ('build app test') {
+            steps {
+                    sh 'mvn clean install -DskipTests=true '
+            }
+        }
+
+        stage ('docker image build')
+        {
+            steps {
+
+                        sh 'mvn dockerfile:build'
+
+                  }
+          }
+          stage ('docker image push to Docker Hub') {
+            steps {
+                    sh 'mvn dockerfile:push'
             }
         }
     }
