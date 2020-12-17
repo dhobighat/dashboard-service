@@ -21,6 +21,6 @@ node {
       echo "Docker Image Tag Name: ${dockerImageTag}"
       sh "docker login -u docker131186 -p 8d96b93e-3077-42e1-9eca-d4c4235323b0 ${dockerRepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
-      sh "docker push ${dockerImageTag}"
+      sh "docker push docker131186/${dockerImageTag}"
     }
 }
