@@ -25,7 +25,7 @@ node {
 
     stage('Deploy Docker Image'){
       echo "Docker Image Tag Name: ${dockerImageTag}"
-      sh "docker login -u docker131186 -p $Passw0rd$ ${dockerRepoUrl}"
+      sh "docker login -u docker131186 -p '$Passw0rd$' ${dockerRepoUrl}"
       sh "docker tag ${dockerImageName} ${dockerImageTag}"
       sh "docker push ${dockerImageTag}"
     }
