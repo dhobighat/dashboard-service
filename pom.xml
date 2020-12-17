@@ -59,7 +59,9 @@
 				<version>2.7.0</version>
 				<configuration>
 					<to>
-						<image>docker131186/dashboard-service:${project.version}</image>
+						<image>docker.io/docker131186/dashboard-service:${project.version}</image>
+						<username>docker131186</username>
+						<password>da685f3d-4d77-43c7-a476-c2b57deccc67</password>
 					</to>
 				</configuration>
 			</plugin>
