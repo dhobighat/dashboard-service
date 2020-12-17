@@ -6,7 +6,7 @@ node {
 
     def dockerRepoUrl = "https://registry.hub.docker.com"
     def dockerImageName = "dashboard-service"
-    def dockerImageTag = "${dockerImageName}:${env.BUILD_NUMBER}"
+    def dockerImageTag = "${dockerImageName}:latest"
 
     stage('Build Project') {
       // build project via maven
