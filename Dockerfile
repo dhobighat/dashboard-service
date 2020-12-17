@@ -1,5 +1,5 @@
-FROM amazoncorretto:11.0.4
+FROM adoptopenjdk/openjdk11:jdk-11.0.5_10-debian
 VOLUME /tmp
-ARG JAR_FILE
-COPY ${JAR_FILE} dashboard-serivce.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/dashboard-serivce.jar"]
+ADD target/dependency/jacocoagent.jar jacocoagent.jar
+ADD target/dashboard-service*.jar app.jar
+ENTRYPOINT exec java $JAVA_OPTS -jar /app.jar
