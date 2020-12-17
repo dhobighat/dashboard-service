@@ -1,34 +1,32 @@
-pipeline {
-    agent any
-    stages {
-        stage ('Checking java version') {
-            steps {
-                    sh 'java -version'
-            }
-        }
-        stage ('maven version') {
-            steps {
-                    sh 'mvn -version'
-            }
-        }
-        stage ('build app test') {
-            steps {
-                    sh 'mvn clean install -DskipTests=true '
-            }
-        }
+node {
 
-        stage ('docker image build')
-        {
-            steps {
+    // holds reference to docker image
+    def dockerImage
+    // ip address of the docker private repository(nexus)
 
-                  sh 'mvn dockerfile:build'
+    def dockerRepoUrl = "https://registry.hub.docker.com"
+    def dockerImageName = "dashboard-service"
+    def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
 
-                }
-          }
-          stage ('docker image push to Docker Hub') {
-            steps {
-                    sh 'mvn dockerfile:push'
-            }
-        }
+    stage('Clone Repo') {
+      git 'https://github.com/sandipan-git/dashboard-service.git'
+    }
+
+    stage('Build Project') {
+      // build project via maven
+      sh 'mvn clean package -DskipTests=true'
+    }
+    stage('Build Docker Image') {
+      sh "whoami"
+      sh "ls -all /var/run/docker.sock"
+      sh "mv ./target/*.jar ./data"
+      dockerImage = docker.build("dashboard-service")
+    }
+
+    stage('Deploy Docker Image'){
+      echo "Docker Image Tag Name: ${dockerImageTag}"
+      sh "docker login -u docker131186 -p $Passw0rd$ ${dockerRepoUrl}"
+      sh "docker tag ${dockerImageName} ${dockerImageTag}"
+      sh "docker push ${dockerImageTag}"
     }
 }
