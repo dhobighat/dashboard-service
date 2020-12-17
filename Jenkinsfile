@@ -13,8 +13,6 @@ node {
       sh 'mvn clean package -DskipTests=true'
     }
     stage('Build Docker Image') {
-      sh "whoami"
-      sh "ls -all /var/run/docker.sock"
       sh "mv ./target/*.jar ./data"
       dockerImage = docker.build("dashboard-service")
     }
