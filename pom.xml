@@ -59,7 +59,7 @@
 				<version>2.7.0</version>
 				<configuration>
 					<to>
-						<image>dashboard-service</image>
+						<image>docker131186/dashboard-service:${project.version}</image>
 					</to>
 				</configuration>
 			</plugin>
