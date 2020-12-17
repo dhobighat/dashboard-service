@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Running the Container') {
              steps {
-               sh 'docker run -p 8080:8080 --name dashboard-service dashboard-service'
+               sh 'docker run -p 8080:8080 dashboard-service:latest'
              }
         }
     }
