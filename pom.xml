@@ -56,14 +56,10 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.2.0</version>
+				<version>2.7.0</version>
 				<configuration>
 					<to>
-						<image>docker131186/dashboard-service</image>
-						<tags>
-							<tag>${project.version}</tag>
-							<tag>latest</tag>
-						</tags>
+						<image>dashboard-service</image>
 					</to>
 				</configuration>
 			</plugin>
