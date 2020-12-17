@@ -8,7 +8,6 @@ node {
       sh 'mvn clean package -DskipTests=true'
     }
     stage('Build Docker Image') {
-      sh "mv ./target/*.jar ./data"
       dockerImage = docker.build("dashboard-service")
     }
 }
