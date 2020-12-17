@@ -8,10 +8,6 @@ node {
     def dockerImageName = "dashboard-service"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
 
-    stage('Clone Repo') {
-      git 'https://github.com/sandipan-git/dashboard-service.git'
-    }
-
     stage('Build Project') {
       // build project via maven
       sh 'mvn clean package -DskipTests=true'
