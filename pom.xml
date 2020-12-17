@@ -61,10 +61,15 @@
 					<to>
 						<image>docker.io/docker131186/dashboard-service:${project.version}</image>
 						<auth>
-						<username>docker131186</username>
-						<password>da685f3d-4d77-43c7-a476-c2b57deccc67</password>
+							<username>docker131186</username>
+							<password>da685f3d-4d77-43c7-a476-c2b57deccc67</password>
 						</auth>
 					</to>
+					<container>
+						<ports>
+							<port>8080</port>
+						</ports>
+					</container>
 				</configuration>
 			</plugin>
 		</plugins>
