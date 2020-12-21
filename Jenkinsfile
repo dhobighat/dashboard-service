@@ -1,29 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+     stage('Maven Build') {
+        steps {
+          echo 'Building jar'
+          sh 'mvn clean package'
+        }
+    }
+    stage('Docker Build') {
       steps {
-        echo 'Building container image...'
-        sh 'mvn clean package'
+        echo 'Building container image'
         script {
           dockerInstance = docker.build(imageName)
         }
-
       }
     }
     stage('Docker Publish') {
       steps {
-        echo 'Publishing container image to the registry...'
+        echo 'Publishing container image to the registry'
         script {
           docker.withRegistry('', registryCredentialSet) {
             dockerInstance.push("${env.BUILD_NUMBER}")
             dockerInstance.push("latest")
           }
         }
-
       }
     }
-    stage('Deploy') {
+    stage('Kubernetes Deploy') {
       steps {
         echo 'Sending deployment request to Kubernetes...'
       }

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sandipan.work.dashboard</groupId>
 	<artifactId>dashboard-service</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Dashboard Service</name>
 	<description>Generic Dashboard for Startup</description>
 
@@ -35,6 +35,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>dashboard-service-${project.version}.${env.BUILD_NUMBER}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
