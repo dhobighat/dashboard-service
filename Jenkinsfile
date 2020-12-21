@@ -1,8 +1,13 @@
 pipeline {
   agent any
   stages {
+    stage('Maven Build') {
+      steps {
+        mvn clean package
+      }
+    }
 
-    stage('Build') {
+    stage('Docker Build') {
       steps {
         echo 'Building container image...'
         script {
@@ -11,7 +16,7 @@ pipeline {
 
       }
     }
-    stage('Publish') {
+    stage('Docker Publish') {
       steps {
         echo 'Publishing container image to the registry...'
         script {
