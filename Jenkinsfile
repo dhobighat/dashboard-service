@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building container image...'
-        sh 'mvn --version'
+        sh 'mvn clean package'
         script {
           dockerInstance = docker.build(imageName)
         }
