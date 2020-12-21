@@ -1,13 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Maven Build') {
-      steps {
-        mvn clean package
-      }
-    }
-
-    stage('Docker Build') {
+    stage('Build') {
       steps {
         echo 'Building container image...'
         script {
@@ -28,7 +22,6 @@ pipeline {
 
       }
     }
-
     stage('Deploy') {
       steps {
         echo 'Sending deployment request to Kubernetes...'
