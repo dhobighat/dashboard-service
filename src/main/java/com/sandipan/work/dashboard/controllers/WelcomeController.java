@@ -10,6 +10,6 @@ public class WelcomeController {
 
     @GetMapping("/getMessage")
     public String getWelcomeMessage(){
-        return "Welcome to Dashboard";
+        return "Welcome to AWS EC2 Dashboard";
     }
 }
