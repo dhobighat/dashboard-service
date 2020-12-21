@@ -26,9 +26,10 @@ pipeline {
         }
       }
     }
-    stage('Kubernetes Deploy') {
+    stage('Docker Run') {
       steps {
-        echo 'Sending deployment request to Kubernetes...'
+        echo 'Starting Service'
+        sh 'docker run --rm -d -p8000:8000 docker131186/dashboard-service:latest'
       }
     }
 
