@@ -25,19 +25,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-
-		<!--OKTA Dependency : START-->
-		<dependency>
-			<groupId>com.okta.spring</groupId>
-			<artifactId>okta-spring-boot-starter</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-		<!--OKTA Dependency : END -->
-
 		<!--Test Dependency : START -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -52,20 +39,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.7.0</version>
-				<configuration>
-					<to>
-						<image>docker.io/docker131186/dashboard-service:${project.version}</image>
-						<auth>
-							<username>docker131186</username>
-							<password>da685f3d-4d77-43c7-a476-c2b57deccc67</password>
-						</auth>
-					</to>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

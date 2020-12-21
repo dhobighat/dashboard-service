@@ -1,21 +1,45 @@
 pipeline {
-    agent any
-    stages {
-        stage('Build and Push Docker Image') {
-            steps {
-                // Using Google JIB plugin
-                sh 'mvn clean package jib:dockerBuild'
-            }
+  agent any
+  stages {
+
+    stage('Build') {
+      steps {
+        echo 'Building container image...'
+        script {
+          dockerInstance = docker.build(imageName)
         }
-        stage('Running the Container') {
-             steps {
-               sh 'docker run -p 8910:8080 dashboard-service:latest'
-             }
+
+      }
+    }
+    stage('Publish') {
+      steps {
+        echo 'Publishing container image to the registry...'
+        script {
+          docker.withRegistry('', registryCredentialSet) {
+            dockerInstance.push("${env.BUILD_NUMBER}")
+            dockerInstance.push("latest")
+          }
         }
+
+      }
     }
-    post {
-       always {
-           cleanWs()
-       }
+
+    stage('Deploy') {
+      steps {
+        echo 'Sending deployment request to Kubernetes...'
+      }
     }
+
+  }
+  environment {
+    imageName = 'docker131186/dashboard-service'
+    registryCredentialSet = 'DOCKER_HUB_CREDENTIAL'
+    registryUri = ''
+    dockerInstance = ''
+  }
+  post {
+      always {
+         cleanWs()
+      }
+  }
 }
