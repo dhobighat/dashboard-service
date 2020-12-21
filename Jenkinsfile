@@ -4,6 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building container image...'
+        mvn clean package _DskipTests=true
         script {
           dockerInstance = docker.build(imageName)
         }
