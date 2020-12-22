@@ -1,4 +1,6 @@
 spring:
+  application:
+  name: dashboard-service
   profiles:
     active:
     - development
