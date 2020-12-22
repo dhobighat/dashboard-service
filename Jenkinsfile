@@ -7,7 +7,7 @@ pipeline {
           sh 'mvn compile jib:build'
         }
     }
-
+  }
   post {
       always {
          cleanWs()
