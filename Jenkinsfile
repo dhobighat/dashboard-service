@@ -1,13 +1,7 @@
 pipeline {
   agent any
   stages {
-     stage('Maven Build') {
-        steps {
-            echo 'Building jar'
-            sh 'mvn clean package'
-          }
-      }
-      stage('Maven Test') {
+      stage('Unit Test') {
          steps {
             echo 'Running Junit'
             sh 'mvn test'
