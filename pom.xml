@@ -73,14 +73,14 @@
 						<image>openjdk:8-jdk-alpine</image>
 						<auth>
 							<username>docker131186</username>
-							<password>$Passw0rd$</password>
+							<password>92998819-7a02-4593-a0bb-ea9b799e1457</password>
 						</auth>
 					</from>
 					<to>
 						<image>docker131186/${project.artifactId}:${project.version}</image>
 						<auth>
 							<username>docker131186</username>
-							<password>$Passw0rd$</password>
+							<password>92998819-7a02-4593-a0bb-ea9b799e1457</password>
 						</auth>
 					</to>
 					<container>
