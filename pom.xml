@@ -84,6 +84,9 @@
 						</auth>
 					</to>
 					<container>
+						<ports>
+							<port>8000</port>
+						</ports>
 						<jvmFlags>
 							<jvmFlag>-Xms512m</jvmFlag>
 							<jvmFlag>-Xmx512m</jvmFlag>
