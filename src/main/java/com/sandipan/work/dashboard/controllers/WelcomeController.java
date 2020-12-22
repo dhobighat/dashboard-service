@@ -1,6 +1,5 @@
 package com.sandipan.work.dashboard.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +10,6 @@ public class WelcomeController {
 
     @GetMapping("/getMessage")
     public String getWelcomeMessage(){
-        return "Welcome to Dashboard";
+        return "Welcome to AWS EC2 Dashboard";
     }
 }

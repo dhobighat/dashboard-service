@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sandipan.work.dashboard</groupId>
 	<artifactId>dashboard-service</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Dashboard Service</name>
 	<description>Generic Dashboard for Startup</description>
 
@@ -18,6 +18,9 @@
 		<java.version>8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<sonar.projectKey>sandipan-git</sonar.projectKey>
+		<sonar.organization>sandipan-sonar</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
 	<dependencies>
@@ -25,19 +28,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-
-		<!--OKTA Dependency : START-->
-		<dependency>
-			<groupId>com.okta.spring</groupId>
-			<artifactId>okta-spring-boot-starter</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-		<!--OKTA Dependency : END -->
-
 		<!--Test Dependency : START -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,24 +38,11 @@
 	</dependencies>
 
 	<build>
+		<finalName>dashboard-service-${project.version}.${env.BUILD_NUMBER}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.7.0</version>
-				<configuration>
-					<to>
-						<image>docker.io/docker131186/dashboard-service:${project.version}</image>
-						<auth>
-							<username>docker131186</username>
-							<password>da685f3d-4d77-43c7-a476-c2b57deccc67</password>
-						</auth>
-					</to>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
