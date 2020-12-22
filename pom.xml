@@ -74,6 +74,10 @@
 					</from>
 					<to>
 						<image>docker131186/${project.artifactId}:${project.version}</image>
+						<auth>
+							<username>docker131186</username>
+							<password>$Passw0rd$</password>
+						</auth>
 					</to>
 					<container>
 						<jvmFlags>
