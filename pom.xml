@@ -71,15 +71,11 @@
 				<configuration>
 					<from>
 						<image>openjdk:8-jdk-alpine</image>
-						<username>docker131186</username>
-						<password>$Passw0rd$</password>
+						<credHelper>*</credHelper>
 					</from>
 					<to>
 						<image>docker131186/${project.artifactId}:${project.version}</image>
-						<auth>
-							<username>docker131186</username>
-							<password>$Passw0rd$</password>
-						</auth>
+						<credHelper>*</credHelper>
 					</to>
 					<container>
 						<jvmFlags>
