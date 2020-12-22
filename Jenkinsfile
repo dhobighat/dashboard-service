@@ -28,8 +28,10 @@ pipeline {
     }
     stage('Docker Run') {
       steps {
+        echo 'Stopping Service'
+        sh 'docker ps -q --filter "name=dashboard-service" | xargs docker stop'
         echo 'Starting Service'
-        sh 'docker run --rm -d -p8000:8000 docker131186/dashboard-service:latest'
+        sh 'docker run --rm -d -p8000:8000 --name dashboard-service docker131186/dashboard-service:latest'
       }
     }
 
