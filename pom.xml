@@ -45,24 +45,54 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.5</version>
 				<executions>
 					<execution>
-						<id>prepare-agent</id>
+						<id>jacoco-initialize</id>
 						<goals>
 							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
 					<execution>
-						<id>report</id>
-						<phase>prepare-package</phase>
+						<id>jacoco-site</id>
+						<phase>test</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>2.2.0</version>
+				<configuration>
+					<from>
+						<image>openjdk:8-jdk-alpine</image>
+						<auth>
+							<username>docker131186</username>
+							<password>92998819-7a02-4593-a0bb-ea9b799e1457</password>
+						</auth>
+					</from>
+					<to>
+						<image>docker131186/${project.artifactId}:${project.version}</image>
+						<auth>
+							<username>docker131186</username>
+							<password>92998819-7a02-4593-a0bb-ea9b799e1457</password>
+						</auth>
+					</to>
+					<container>
+						<ports>
+							<port>8000</port>
+						</ports>
+					</container>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
