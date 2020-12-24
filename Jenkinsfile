@@ -4,7 +4,7 @@ pipeline {
      stage('Jib Build') {
         steps {
           echo 'Building image'
-          'mvn compile test jib:build'
+          bat 'mvn compile test jib:build'
         }
     }
   }
