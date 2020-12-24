@@ -3,20 +3,20 @@ spring:
   name: dashboard-service
   profiles:
     active:
-    - development
+    - dev
 
 
 ---
 spring:
-    profiles: development
+    profiles: dev
 server:
-  port: 8000
+  port: 8080
 
 ---
 
 spring:
   profiles: production
 server:
-  port: 8000
+  port: 8080
 
 
