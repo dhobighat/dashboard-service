@@ -4,7 +4,7 @@ pipeline {
      stage('Docker Build') {
         steps {
           echo 'Building image'
-          sh 'mvn compile test jib:build'
+          mvn compile test jib:build
         }
     }
   }
