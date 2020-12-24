@@ -1,10 +1,10 @@
 pipeline {
   agent any
   stages {
-     stage('Docker Build') {
+     stage('Jib Build') {
         steps {
           echo 'Building image'
-          mvn compile test jib:build
+          'mvn compile test jib:build'
         }
     }
   }
