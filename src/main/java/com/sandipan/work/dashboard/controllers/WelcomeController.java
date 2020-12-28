@@ -12,4 +12,9 @@ public class WelcomeController {
     public String getWelcomeMessage(){
         return "Welcome to AWS EC2 Dashboard";
     }
+
+    @GetMapping
+    public String healthCheck(){
+        return "SUCCESS";
+    }
 }
