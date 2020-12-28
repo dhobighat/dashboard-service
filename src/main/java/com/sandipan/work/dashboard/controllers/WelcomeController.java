@@ -17,4 +17,9 @@ public class WelcomeController {
     public String healthCheck(){
         return "Application is up and running";
     }
+
+    @GetMapping("/version")
+    public String getVersion(){
+        return "1.0.x";
+    }
 }
