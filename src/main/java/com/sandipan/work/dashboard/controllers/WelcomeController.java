@@ -10,11 +10,11 @@ public class WelcomeController {
 
     @GetMapping("/getMessage")
     public String getWelcomeMessage(){
-        return "Welcome to AWS EC2 Dashboard";
+        return "Welcome to AWS ECS Dashboard";
     }
 
     @GetMapping
     public String healthCheck(){
-        return "SUCCESS";
+        return "Application is up and running";
     }
 }
