@@ -10,13 +10,13 @@ spring:
 spring:
     profiles: dev
 server:
-  port: 8080
+  port: 8000
 
 ---
 
 spring:
   profiles: production
 server:
-  port: 8080
+  port: 8000
 
 
