@@ -13,12 +13,6 @@ pipeline {
             bat 'mvn compile test jib:build'
         }
     }
-    stage('Sleeping') {
-            steps {
-                echo 'Waiting for the latest docker image to get pulled'
-                timeout 60
-            }
-    }
     stage('Starting Service') {
         steps {
             echo 'Starting Task'
