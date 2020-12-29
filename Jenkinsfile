@@ -16,7 +16,7 @@ pipeline {
     stage('Sleeping') {
             steps {
                 echo 'Waiting for the latest docker image to get pulled'
-                bat 'timeout 60'
+                timeout 60
             }
     }
     stage('Starting Service') {
