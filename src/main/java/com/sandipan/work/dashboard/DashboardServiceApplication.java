@@ -13,14 +13,4 @@ public class DashboardServiceApplication {
 		SpringApplication.run(DashboardServiceApplication.class, args);
 	}
 
-	@Bean
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("*").allowedOrigins("http://react-dashboard-app.s3.amazonaws.com");
-			}
-		};
-	}
-
 }

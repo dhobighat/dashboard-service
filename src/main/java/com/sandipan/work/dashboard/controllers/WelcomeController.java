@@ -1,11 +1,13 @@
 package com.sandipan.work.dashboard.controllers;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/dashboard")
+@CrossOrigin(origins = "http://react-dashboard-app.s3.amazonaws.com")
 public class WelcomeController {
 
     @GetMapping("/getMessage")
@@ -20,6 +22,6 @@ public class WelcomeController {
 
     @GetMapping("/version")
     public String getVersion(){
-        return "1.0.15";
+        return "1.0.16";
     }
 }
