@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  def buildNumber = currentBuild.number
   stages {
      stage('Stopping Service') {
         steps {
@@ -10,7 +11,7 @@ pipeline {
      stage('Building Image') {
         steps {
             echo 'Building and Pushing Docker Image to Docker Hub'
-            bat 'mvn compile test jib:build'
+            bat 'mvn compile test jib:build -Dbuild.number=${buildNumber}'
         }
     }
     stage('Starting Service') {
