@@ -1,12 +1,13 @@
 package com.sandipan.work.dashboard.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/dashboard")
+@RequestMapping("/")
 @CrossOrigin(origins = "http://react-dashboard-app.s3.amazonaws.com")
 public class WelcomeController {
 
@@ -16,8 +17,8 @@ public class WelcomeController {
     }
 
     @GetMapping
-    public String healthCheck(){
-        return "Application is up and running";
+    public int healthCheck(){
+        return HttpStatus.OK.value();
     }
 
     @GetMapping("/version")
