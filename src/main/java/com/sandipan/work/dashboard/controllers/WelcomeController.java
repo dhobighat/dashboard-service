@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-@CrossOrigin(origins = "http://react-dashboard-app.s3.amazonaws.com")
+@CrossOrigin(origins = "http://aws-dev-dashboard.s3.amazonaws.com/")
 public class WelcomeController {
 
     @GetMapping("/getMessage")
