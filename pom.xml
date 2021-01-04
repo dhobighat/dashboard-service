@@ -12,7 +12,7 @@
 	<artifactId>dashboard-service</artifactId>
 	<version>1.0.${build.number}</version>
 	<name>Dashboard Service</name>
-	<description>Generic Dashboard for Startup</description>
+	<description>Generic Dashboard</description>
 
 	<properties>
 		<java.version>8</java.version>
