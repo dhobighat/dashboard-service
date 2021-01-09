@@ -6,7 +6,7 @@ before_install:
 
 addons:
   sonarcloud:
-    organization: "sandipan-sonar"
+    organization: "sandipan-travis"
     token: $SONAR_TOKEN
 
 script:
