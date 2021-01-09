@@ -4,6 +4,11 @@ jdk: oraclejdk11
 before_install:
   - chmod +x mvnw
 
+addons:
+  sonarcloud:
+    organization: "sandipan-sonar"
+    token: "a81f359dd8c231af07bdd0bf7d20e98407635343"
+
 script:
   - ./mvnw compile test jib:build
 
