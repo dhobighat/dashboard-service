@@ -7,7 +7,7 @@ before_install:
 addons:
   sonarcloud:
     organization: "sandipan-sonar"
-    token: "a81f359dd8c231af07bdd0bf7d20e98407635343"
+    token: $SONAR_TOKEN
 
 script:
   - ./mvnw compile test jib:build
