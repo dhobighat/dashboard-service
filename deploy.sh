@@ -14,7 +14,6 @@ sudo chmod +x /usr/bin/ecs-deploy
 
 # login DockerHub
 docker login --username $DOCKER_HUB_REPO_NAME --password $DOCKER_HUB_REPO_KEY
-docker pull $DOCKER_HUB_URL:latest
 
 # update an AWS ECS service with the new image
-aws ecs update-service --cluster aws-dev-ecs-cluster --service dashboard-service --force-new-deployment
+aws ecs update-service --cluster $ECS_CLUSTER --service $ECS_SERVICE --force-new-deployment --desired-count=2

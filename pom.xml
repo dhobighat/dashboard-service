@@ -75,19 +75,19 @@
 					<from>
 						<image>openjdk:8-jdk-alpine</image>
 						<auth>
-							<username>${docker.repo.name}</username>
-							<password>${docker.repo.key}</password>
+							<username>${DOCKER_HUB_REPO_NAME}</username>
+							<password>${DOCKER_HUB_REPO_KEY}</password>
 						</auth>
 					</from>
 					<to>
-						<image>docker131186/${project.artifactId}</image>
+						<image>${DOCKER_HUB_REPO_NAME}/${project.artifactId}</image>
 						<auth>
-							<username>${docker.repo.name}</username>
-							<password>${docker.repo.key}</password>
+							<username>${DOCKER_HUB_REPO_NAME}</username>
+							<password>${DOCKER_HUB_REPO_KEY}</password>
 						</auth>
 						<tags>
 							<tag>latest</tag>
-							<tag>${build.number}</tag>
+							<tag>${TRAVIS_BUILD_NUMBER}</tag>
 						</tags>
 					</to>
 					<container>
