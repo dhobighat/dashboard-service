@@ -12,9 +12,9 @@ curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-de
   sudo tee -a /usr/bin/ecs-deploy
 sudo chmod +x /usr/bin/ecs-deploy
 
-# or login DockerHub
+# login DockerHub
 docker login --username $DOCKER_HUB_REPO_NAME --password $DOCKER_HUB_REPO_KEY
-docker pull docker.io/docker131186/dashboard-service:latest
+docker pull $DOCKER_HUB_URL:latest
 
 # update an AWS ECS service with the new image
-ecs-deploy -c aws-dev-ecs-cluster -n dashboard-service -i docker.io/docker131186/dashboard-service:latest
+ecs-deploy -c $AWS_DEV_ECS_CLUSTER -n $TRAVIS_JOB_NAME -i $DOCKER_HUB_URL:latest
