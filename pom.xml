@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sandipan.work.dashboard</groupId>
 	<artifactId>dashboard-service</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.${build.number}</version>
 	<name>Dashboard Service</name>
 	<description>Generic Dashboard</description>
 

@@ -10,5 +10,6 @@ addons:
     token: $SONAR_TOKEN
 
 script:
-  - ./mvnw compile test jib:build
+  - ./mvnw clean verify sonar:sonar -Pcoverage
+  - ./mvnw compile test jib:build -Dbuild.number=$TRAVIS_BUILD_NUMBER
 
