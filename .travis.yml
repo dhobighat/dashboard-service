@@ -10,6 +10,5 @@ addons:
     token: $SONAR_TOKEN
 
 script:
-  - ./mvnw clean verify sonar:sonar -Pcoverage
-  - ./mvnw compile test jib:build -Dbuild.number=$TRAVIS_BUILD_NUMBER -Ddocker.repo.name=$DOCKER_HUB_REPO_NAME -Ddocker.repo.key=DOCKER_HUB_REPO_KEY
+  - ./mvnw clean compile sonar:sonar -Pcoverage verify jib:build -Dbuild.number=$TRAVIS_BUILD_NUMBER -Ddocker.repo.name=$DOCKER_HUB_REPO_NAME -Ddocker.repo.key=$DOCKER_HUB_REPO_KEY
 

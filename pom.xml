@@ -11,7 +11,7 @@
 	<groupId>com.sandipan.work.dashboard</groupId>
 	<artifactId>dashboard-service</artifactId>
 	<version>1.0.0</version>
-	<name>Dashboard Service</name>
+	<name>dashboard-service</name>
 	<description>Generic Dashboard</description>
 
 	<properties>
@@ -60,7 +60,7 @@
 					</execution>
 					<execution>
 						<id>jacoco-site</id>
-						<phase>test</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>report</goal>
 						</goals>
