@@ -23,6 +23,6 @@ public class WelcomeController {
 
     @GetMapping("/version")
     public String getVersion(){
-        return "1.0.19";
+        return "1.0.20";
     }
 }
