@@ -8,6 +8,8 @@ env:
     - secure: "encrypted-dockerhub-password"
     - COMMIT=${TRAVIS_COMMIT::7}
 
+before_install:
+  - chmod +x mvnw
 addons:
   sonarcloud:
     organization: "sandipan-sonar"
@@ -15,6 +17,6 @@ addons:
       secure: $SONAR_TOKEN
 
 script:
-  - mvn compile test jib:build -Dbuild.number=${env.BUILD_NUMBER}
-  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+  - ./mvnw compile test jib:build -Dbuild.number=${env.BUILD_NUMBER}
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 
