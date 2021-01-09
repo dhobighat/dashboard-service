@@ -17,4 +17,4 @@ docker login --username $DOCKER_HUB_REPO_NAME --password $DOCKER_HUB_REPO_KEY
 docker pull $DOCKER_HUB_URL:latest
 
 # update an AWS ECS service with the new image
-ecs-deploy -c $AWS_DEV_ECS_CLUSTER -n $TRAVIS_JOB_NAME -i $DOCKER_HUB_URL:latest
+aws ecs update-service --cluster aws-dev-ecs-cluster --service dashboard-service --force-new-deployment
