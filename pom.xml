@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sandipan.work.dashboard</groupId>
 	<artifactId>dashboard-service</artifactId>
-	<version>1.0.${build.number}</version>
+	<version>1.0.0</version>
 	<name>Dashboard Service</name>
 	<description>Generic Dashboard</description>
 
@@ -21,8 +21,6 @@
 		<sonar.projectKey>sandipan-git</sonar.projectKey>
 		<sonar.organization>sandipan-sonar</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<docker.repo.name>docker131186</docker.repo.name>
-		<docker.repo.key>92998819-7a02-4593-a0bb-ea9b799e1457</docker.repo.key>
 	</properties>
 
 	<dependencies>
@@ -89,7 +87,7 @@
 						</auth>
 						<tags>
 							<tag>latest</tag>
-							<tag>${project.version}</tag>
+							<tag>${build.number}</tag>
 						</tags>
 					</to>
 					<container>
