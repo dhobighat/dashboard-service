@@ -12,6 +12,5 @@ curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-de
   sudo tee -a /usr/bin/ecs-deploy
 sudo chmod +x /usr/bin/ecs-deploy
 
-
 # update an AWS ECS service with the new image
-ecs-deploy -c aws-dev-ecs-cluster -n dashboard-service -i docker.io/docker131186/dashboard-service:latest
+ecs-deploy -c aws-dev-ecs-cluster -n dashboard-service
