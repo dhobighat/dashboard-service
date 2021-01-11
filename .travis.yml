@@ -9,7 +9,15 @@ addons:
   sonarcloud:
     organization: "sandipan-sonar"
     token: $SONAR_TOKEN
-
+  coverity_scan:
+    project:
+      name: sandipan-git/dashboard-service
+      version: 1.0
+      description: dashboard-service
+    notification_email: work.sandipan@gmail.com
+    build_command_prepend: ./configure
+    build_command: make
+    branch_pattern: master
 script:
   - ./mvnw clean compile jib:build sonar:sonar -Pcoverage verify
 deploy:
