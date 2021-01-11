@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/dashboard")
-@CrossOrigin(origins = "http://aws-dev-dashboard.s3.amazonaws.com/")
+@CrossOrigin(origins = "http://aws-dev-dashboard.s3.amazonaws.com")
 public class WelcomeController {
 
     @GetMapping("/getMessage")
@@ -23,6 +23,6 @@ public class WelcomeController {
 
     @GetMapping("/version")
     public String getVersion(){
-        return "1.0.20";
+        return "1.0.21";
     }
 }
