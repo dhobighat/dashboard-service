@@ -3,22 +3,12 @@ jdk: oraclejdk11
 
 before_install:
   - chmod +x mvnw
-  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 services:
   - docker
 addons:
   sonarcloud:
     organization: "sandipan-sonar"
     token: $SONAR_TOKEN
-  coverity_scan:
-    project:
-      name: sandipan-git/dashboard-service
-      version: 1.0
-      description: dashboard-service
-    notification_email: work.sandipan@gmail.com
-    build_command_prepend: git clone https://github.com/sandipan-git/dashboard-service.git
-    build_command: mvn --DskipTests=true -Dmaven.javadoc.skip=true compile
-    branch_pattern: master
 script:
   - ./mvnw clean compile jib:build sonar:sonar -Pcoverage verify
 deploy:
