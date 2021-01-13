@@ -1,5 +1,7 @@
 package com.sandipan.work.dashboard.controllers;
 
+import com.sandipan.work.dashboard.service.DashboardServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://aws-dev-dashboard.s3.amazonaws.com")
 public class WelcomeController {
 
+    @Autowired
+    DashboardServiceImpl dashboardService;
+
     @GetMapping("/getMessage")
     public String getWelcomeMessage(){
-        return "Welcome to AWS ECS Dashboard";
+        return dashboardService.getReleaseNotes();
     }
 
     @GetMapping

@@ -4,11 +4,15 @@ spring:
   profiles:
     active:
     - dev
-
+  main:
+    banner-mode: off
 
 ---
 spring:
-    profiles: dev
+  profiles: dev
+  data:
+    mongodb:
+      uri: mongodb+srv://dashboard_service_user:08usPdh0Ke2UgpVg@aws-dev-db-cluster.5mgny.mongodb.net/aws-dev-db
 server:
   port: 8000
 
