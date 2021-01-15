@@ -10,6 +10,7 @@ addons:
     organization: "dhobighat"
     token: $SONAR_TOKEN
 script:
+  - echo "$DOCKER_HUB_REPO_KEY" | docker login -u "$DOCKER_HUB_REPO_NAME" --password-stdin
   - ./mvnw clean compile jib:build sonar:sonar -Pcoverage verify
 deploy:
   provider: script
