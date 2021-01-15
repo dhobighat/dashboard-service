@@ -7,7 +7,7 @@ services:
   - docker
 addons:
   sonarcloud:
-    organization: "sandipan-sonar"
+    organization: "dhobighat"
     token: $SONAR_TOKEN
 script:
   - ./mvnw clean compile jib:build sonar:sonar -Pcoverage verify
