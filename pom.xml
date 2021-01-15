@@ -81,21 +81,13 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
-				<version>2.7.0</version>
+				<version>2.7.1</version>
 				<configuration>
 					<from>
 						<image>openjdk:8-jdk-alpine</image>
-						<auth>
-							<username>${DOCKER_HUB_REPO_NAME}</username>
-							<password>${DOCKER_HUB_REPO_KEY}</password>
-						</auth>
 					</from>
 					<to>
 						<image>${DOCKER_HUB_REPO_NAME}/${project.artifactId}</image>
-						<auth>
-							<username>${DOCKER_HUB_REPO_NAME}</username>
-							<password>${DOCKER_HUB_REPO_KEY}</password>
-						</auth>
 						<tags>
 							<tag>latest</tag>
 							<tag>${TRAVIS_BUILD_NUMBER}</tag>
