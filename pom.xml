@@ -12,7 +12,7 @@
 	<artifactId>dashboard-service</artifactId>
 	<version>1.0.0</version>
 	<name>dashboard-service</name>
-	<description>Generic Dashboard</description>
+	<description>Dhobighat Dashboard Service</description>
 
 	<properties>
 		<java.version>8</java.version>
