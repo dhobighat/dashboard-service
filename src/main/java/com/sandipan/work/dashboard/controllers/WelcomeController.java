@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/dashboard")
-@CrossOrigin(origins = "http://dhobighat-dev.s3.amazonaws.com")
 public class WelcomeController {
 
     @Autowired

@@ -15,6 +15,9 @@ spring:
       uri: mongodb+srv://mongo_db_user:VnjNuLeRlz3x1rRa@dhobighat-dev-cluster.umwfh.mongodb.net/dashboard-service
 server:
   port: 8000
+auth0:
+  issuer: https://dhobighat-dev.us.auth0.com/
+  apiAudience: https://dashboard.service/api
 
 ---
 
